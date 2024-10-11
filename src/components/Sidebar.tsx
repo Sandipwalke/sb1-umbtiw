@@ -37,6 +37,10 @@ const Sidebar: React.FC<SidebarProps> = ({ toolCategories, isCollapsed, setIsCol
     return '/' + categoryName.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
   };
 
+  const getToolPath = (categoryName: string, toolName: string) => {
+    return `${getCategoryPath(categoryName)}/${toolName.toLowerCase().replace(/ /g, '-')}`;
+  };
+
   return (
     <aside className={`bg-white overflow-y-auto transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
       <div className="p-4 flex justify-between items-center">
@@ -74,7 +78,7 @@ const Sidebar: React.FC<SidebarProps> = ({ toolCategories, isCollapsed, setIsCol
                   {category.tools.map((tool) => (
                     <li key={tool.id} className="mb-1">
                       <Link
-                        to={`${getCategoryPath(category.name)}/${tool.id}`}
+                        to={getToolPath(category.name, tool.name)}
                         className="text-sm hover:text-blue-600"
                       >
                         {tool.name}
