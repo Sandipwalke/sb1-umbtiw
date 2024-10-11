@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
+import UnitConverters from './UnitConverters';
 
 interface ToolContentProps {
   isSidebarCollapsed: boolean;
@@ -11,16 +12,19 @@ const ToolContent: React.FC<ToolContentProps> = ({ isSidebarCollapsed }) => {
     isSidebarCollapsed ? 'ml-16' : 'ml-64'
   }`;
 
-  useEffect(() => {
-    console.log('ToolContent component rendered');
-    console.log('Current path:', location.pathname);
-  }, [location.pathname]);
-
   if (location.pathname === '/') {
     return (
       <div className={contentClass}>
         <h2 className="text-2xl font-semibold mb-4">Welcome to Web Toolbox</h2>
         <p>Select a tool category from the sidebar to get started.</p>
+      </div>
+    );
+  }
+
+  if (location.pathname === '/unit-converters') {
+    return (
+      <div className={contentClass}>
+        <UnitConverters />
       </div>
     );
   }

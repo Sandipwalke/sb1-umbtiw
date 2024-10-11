@@ -71,7 +71,7 @@ function App() {
             <Route path="/document-converters/pdf-splitter" element={<PdfSplitter />} />
             <Route path="/document-converters/text-file-converter" element={<TextFileConverter />} />
             <Route path="/image-photo-editors" element={<ImagePhotoEditors />} />
-            <Route path="/unit-converters" element={<UnitConverters />} />
+            <Route path="/unit-converters/*" element={<UnitConverters />} />
             <Route path="/currency-converter" element={<CurrencyConverter />} />
             <Route path="/text-tools" element={<TextTools />} />
             <Route path="/file-compression" element={<FileCompression />} />
