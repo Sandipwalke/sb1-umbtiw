@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 interface ToolContentProps {
@@ -10,6 +10,11 @@ const ToolContent: React.FC<ToolContentProps> = ({ isSidebarCollapsed }) => {
   const contentClass = `flex-1 p-8 transition-all duration-300 ${
     isSidebarCollapsed ? 'ml-16' : 'ml-64'
   }`;
+
+  useEffect(() => {
+    console.log('ToolContent component rendered');
+    console.log('Current path:', location.pathname);
+  }, [location.pathname]);
 
   if (location.pathname === '/') {
     return (
