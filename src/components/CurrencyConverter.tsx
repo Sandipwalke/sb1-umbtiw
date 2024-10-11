@@ -1,17 +1,32 @@
 import React from 'react';
-import { toolCategories } from '../data/toolData';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import RealTimeCurrencyConverter from './tools/RealTimeCurrencyConverter';
+import HistoricalCurrencyRates from './tools/HistoricalCurrencyRates';
+import CryptocurrencyConverter from './tools/CryptocurrencyConverter';
 
 const CurrencyConverter: React.FC = () => {
-  const category = toolCategories.find(cat => cat.name === "Currency Converter");
+  const location = useLocation();
+  const currentPath = location.pathname.split('/').pop();
+
+  let content;
+  switch (currentPath) {
+    case 'real-time-currency-converter':
+      content = <RealTimeCurrencyConverter />;
+      break;
+    case 'historical-currency-rates':
+      content = <HistoricalCurrencyRates />;
+      break;
+    case 'cryptocurrency-converter':
+      content = <CryptocurrencyConverter />;
+      break;
+    default:
+      content = <p>Please select a currency converter tool from the sidebar.</p>;
+  }
 
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4">Currency Converter</h2>
-      <ul className="list-disc pl-5">
-        {category?.tools.map(tool => (
-          <li key={tool.id} className="mb-2">{tool.name}</li>
-        ))}
-      </ul>
+      {content}
     </div>
   );
 };

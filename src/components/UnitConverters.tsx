@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, Outlet } from 'react-router-dom';
 import LengthConverter from './tools/LengthConverter';
 import WeightConverter from './tools/WeightConverter';
 import TemperatureConverter from './tools/TemperatureConverter';
@@ -11,6 +11,9 @@ import PressureConverter from './tools/PressureConverter';
 import FuelEfficiencyConverter from './tools/FuelEfficiencyConverter';
 import EnergyConverter from './tools/EnergyConverter';
 import DataStorageConverter from './tools/DataStorageConverter';
+import RealTimeCurrencyConverter from './tools/RealTimeCurrencyConverter';
+import HistoricalCurrencyRates from './tools/HistoricalCurrencyRates';
+import CryptocurrencyConverter from './tools/CryptocurrencyConverter';
 
 const UnitConverters: React.FC = () => {
   const location = useLocation();
@@ -38,6 +41,11 @@ const UnitConverters: React.FC = () => {
           <Route path="fuel-efficiency-converter" element={<FuelEfficiencyConverter />} />
           <Route path="energy-converter" element={<EnergyConverter />} />
           <Route path="data-storage-converter" element={<DataStorageConverter />} />
+          <Route path="currency-converter" element={<Outlet />}>
+            <Route path="real-time-currency-converter" element={<RealTimeCurrencyConverter />} />
+            <Route path="historical-currency-rates" element={<HistoricalCurrencyRates />} />
+            <Route path="cryptocurrency-converter" element={<CryptocurrencyConverter />} />
+          </Route>
           <Route path="*" element={<p>Please select a converter from the sidebar.</p>} />
         </Routes>
       </div>

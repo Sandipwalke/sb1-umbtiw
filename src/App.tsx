@@ -33,6 +33,9 @@ import TextToPdf from './components/tools/TextToPdf';
 import PdfMerger from './components/tools/PdfMerger';
 import PdfSplitter from './components/tools/PdfSplitter';
 import TextFileConverter from './components/tools/TextFileConverter';
+import RealTimeCurrencyConverter from './components/tools/RealTimeCurrencyConverter';
+import HistoricalCurrencyRates from './components/tools/HistoricalCurrencyRates';
+import CryptocurrencyConverter from './components/tools/CryptocurrencyConverter';
 import { toolCategories } from './data/toolData';
 
 function App() {
@@ -72,7 +75,11 @@ function App() {
             <Route path="/document-converters/text-file-converter" element={<TextFileConverter />} />
             <Route path="/image-photo-editors" element={<ImagePhotoEditors />} />
             <Route path="/unit-converters/*" element={<UnitConverters />} />
-            <Route path="/currency-converter" element={<CurrencyConverter />} />
+            <Route path="/currency-converter" element={<CurrencyConverter />}>
+              <Route path="real-time-currency-converter" element={<RealTimeCurrencyConverter />} />
+              <Route path="historical-currency-rates" element={<HistoricalCurrencyRates />} />
+              <Route path="cryptocurrency-converter" element={<CryptocurrencyConverter />} />
+            </Route>
             <Route path="/text-tools" element={<TextTools />} />
             <Route path="/file-compression" element={<FileCompression />} />
             <Route path="/date-time-tools" element={<DateTimeTools />} />
