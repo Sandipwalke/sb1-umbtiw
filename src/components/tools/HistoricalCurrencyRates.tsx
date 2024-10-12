@@ -14,17 +14,23 @@ const HistoricalCurrencyRates: React.FC = () => {
     try {
       setError(null);
       setLoading(true);
+      console.log('Fetching historical rates...');
+      console.log(`URL: https://api.exchangerate.host/timeseries?base=${baseCurrency}&symbols=${targetCurrency}&start_date=${startDate}&end_date=${endDate}`);
+      
       const response = await axios.get(
         `https://api.exchangerate.host/timeseries?base=${baseCurrency}&symbols=${targetCurrency}&start_date=${startDate}&end_date=${endDate}`
       );
+      
+      console.log('API Response:', response.data);
+      
       if (response.data && response.data.rates) {
         setHistoricalRates(response.data.rates);
       } else {
         throw new Error('Invalid response format');
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error fetching historical rates:', error);
-      setError('Failed to fetch historical rates. Please try again later.');
+      setError(`Failed to fetch historical rates: ${error.message}`);
       setHistoricalRates(null);
     } finally {
       setLoading(false);
@@ -45,7 +51,7 @@ const HistoricalCurrencyRates: React.FC = () => {
           <input
             type="text"
             value={baseCurrency}
-            onChange={(e) => setBaseCurrency(e.target.value)}
+            onChange={(e) => setBaseCurrency(e.target.value.toUpperCase())}
             className="w-full p-2 border rounded"
             required
           />
@@ -55,7 +61,7 @@ const HistoricalCurrencyRates: React.FC = () => {
           <input
             type="text"
             value={targetCurrency}
-            onChange={(e) => setTargetCurrency(e.target.value)}
+            onChange={(e) => setTargetCurrency(e.target.value.toUpperCase())}
             className="w-full p-2 border rounded"
             required
           />
