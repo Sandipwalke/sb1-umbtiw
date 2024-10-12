@@ -105,6 +105,7 @@ function App() {
             <Route path="/3d-tools" element={<Tool3D />} />
             <Route path="/ar-tools" element={<ArTools />} />
             <Route path="/misc-tools" element={<MiscTools />} />
+            <Route path="/text-tools/text-encryption-aes-256" element={<TextEncryption />} />
           </Routes>
         </div>
       </div>
