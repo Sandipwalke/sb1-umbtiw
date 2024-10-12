@@ -36,6 +36,20 @@ import TextFileConverter from './components/tools/TextFileConverter';
 import RealTimeCurrencyConverter from './components/tools/RealTimeCurrencyConverter';
 import HistoricalCurrencyRates from './components/tools/HistoricalCurrencyRates';
 import CryptocurrencyConverter from './components/tools/CryptocurrencyConverter';
+import WordCounter from './components/tools/WordCounter';
+import CharacterCounter from './components/tools/CharacterCounter';
+import CaseConverter from './components/tools/CaseConverter';
+import RemoveDuplicates from './components/tools/RemoveDuplicates';
+import TextEncryption from './components/tools/TextEncryption';
+import TextToSpeech from './components/tools/TextToSpeech';
+import SpeechToText from './components/tools/SpeechToText';
+import HtmlToMarkdown from './components/tools/HtmlToMarkdown';
+import JsonToCsv from './components/tools/JsonToCsv';
+import LoremIpsumGenerator from './components/tools/LoremIpsumGenerator';
+import TextSummarizer from './components/tools/TextSummarizer';
+import GrammarChecker from './components/tools/GrammarChecker';
+import ParaphrasingTool from './components/tools/ParaphrasingTool';
+import PlagiarismChecker from './components/tools/PlagiarismChecker';
 import { toolCategories } from './data/toolData';
 
 function App() {
@@ -80,7 +94,7 @@ function App() {
               <Route path="historical-currency-rates" element={<HistoricalCurrencyRates />} />
               <Route path="cryptocurrency-converter" element={<CryptocurrencyConverter />} />
             </Route>
-            <Route path="/text-tools" element={<TextTools />} />
+            <Route path="/text-tools/*" element={<TextTools />} />
             <Route path="/file-compression" element={<FileCompression />} />
             <Route path="/date-time-tools" element={<DateTimeTools />} />
             <Route path="/math-tools" element={<MathTools />} />

@@ -38,7 +38,16 @@ const Sidebar: React.FC<SidebarProps> = ({ toolCategories, isCollapsed, setIsCol
   };
 
   const getToolPath = (categoryName: string, toolName: string) => {
-    return `${getCategoryPath(categoryName)}/${toolName.toLowerCase().replace(/ /g, '-')}`;
+    const category = categoryName.toLowerCase();
+    const tool = toolName.toLowerCase().replace(/ /g, '-');
+    
+    if (category === 'text tools') {
+      if (tool === 'remove-duplicate-lines/words') {
+        return `/text-tools/remove-duplicate-lines-words`;
+      }
+      return `/text-tools/${tool}`;
+    }
+    return `${getCategoryPath(categoryName)}/${tool}`;
   };
 
   return (
