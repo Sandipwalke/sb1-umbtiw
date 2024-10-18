@@ -96,7 +96,7 @@ function App() {
             </Route>
             <Route path="/text-tools/*" element={<TextTools />} />
             <Route path="/file-compression" element={<FileCompression />} />
-            <Route path="/date-time-tools" element={<DateTimeTools />} />
+            <Route path="/date-time-tools/*" element={<DateTimeTools />} />
             <Route path="/math-tools" element={<MathTools />} />
             <Route path="/qr-barcode-tools" element={<QrBarcodeTool />} />
             <Route path="/video-players" element={<VideoPlayer />} />
