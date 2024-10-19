@@ -15,8 +15,10 @@ const ToolContent: React.FC<ToolContentProps> = ({ isSidebarCollapsed }) => {
   if (location.pathname === '/') {
     return (
       <div className={contentClass}>
-        <h2 className="text-2xl font-semibold mb-4">Welcome to Web Toolbox</h2>
-        <p>Select a tool category from the sidebar to get started.</p>
+        <div className="apple-card">
+          <h2 className="text-2xl font-semibold mb-4">Welcome to Web Toolbox</h2>
+          <p className="text-gray-600">Select a tool category from the sidebar to get started.</p>
+        </div>
       </div>
     );
   }
@@ -31,8 +33,10 @@ const ToolContent: React.FC<ToolContentProps> = ({ isSidebarCollapsed }) => {
 
   return (
     <div className={contentClass}>
-      <h2 className="text-2xl font-semibold mb-4">Tool Content</h2>
-      <p>Content for the selected tool category will be displayed here.</p>
+      <div className="apple-card">
+        <h2 className="text-2xl font-semibold mb-4">Tool Content</h2>
+        <p className="text-gray-600">Content for the selected tool category will be displayed here.</p>
+      </div>
     </div>
   );
 };
