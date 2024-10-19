@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ChevronDown, ChevronRight, Menu, X, Home } from 'lucide-react';
 
 interface Tool {
   id: number;
@@ -13,12 +14,12 @@ interface Category {
 
 interface SidebarProps {
   toolCategories: Category[];
-  setSelectedTool: (tool: Tool | null) => void;
+  isCollapsed: boolean;
+  setIsCollapsed: (isCollapsed: boolean) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ toolCategories, setSelectedTool }) => {
+const Sidebar: React.FC<SidebarProps> = ({ toolCategories, isCollapsed, setIsCollapsed }) => {
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
-  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleCategory = (categoryName: string) => {
     setExpandedCategories((prev) =>
@@ -30,6 +31,23 @@ const Sidebar: React.FC<SidebarProps> = ({ toolCategories, setSelectedTool }) =>
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
+  };
+
+  const getCategoryPath = (categoryName: string) => {
+    return '/' + categoryName.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+  };
+
+  const getToolPath = (categoryName: string, toolName: string) => {
+    const category = categoryName.toLowerCase();
+    const tool = toolName.toLowerCase().replace(/ /g, '-').replace(/[()]/g, '');
+    
+    if (category === 'text tools') {
+      if (tool === 'remove-duplicate-lines/words') {
+        return `/text-tools/remove-duplicate-lines-words`;
+      }
+      return `/text-tools/${tool}`;
+    }
+    return `${getCategoryPath(categoryName)}/${tool}`;
   };
 
   return (
@@ -45,13 +63,19 @@ const Sidebar: React.FC<SidebarProps> = ({ toolCategories, setSelectedTool }) =>
       </div>
       {!isCollapsed && (
         <div className="p-4">
+          <Link to="/" className="flex items-center mb-4 text-blue-600 hover:text-blue-800">
+            <Home size={20} className="mr-2" />
+            Home
+          </Link>
           {toolCategories.map((category) => (
             <div key={category.name} className="mb-2">
               <button
                 className="flex items-center justify-between w-full text-left font-medium"
                 onClick={() => toggleCategory(category.name)}
               >
-                {category.name}
+                <Link to={getCategoryPath(category.name)} className="flex-grow">
+                  {category.name}
+                </Link>
                 {expandedCategories.includes(category.name) ? (
                   <ChevronDown size={16} />
                 ) : (
@@ -62,12 +86,12 @@ const Sidebar: React.FC<SidebarProps> = ({ toolCategories, setSelectedTool }) =>
                 <ul className="ml-4 mt-2">
                   {category.tools.map((tool) => (
                     <li key={tool.id} className="mb-1">
-                      <button
+                      <Link
+                        to={getToolPath(category.name, tool.name)}
                         className="text-sm hover:text-blue-600"
-                        onClick={() => setSelectedTool(tool)}
                       >
                         {tool.name}
-                      </button>
+                      </Link>
                     </li>
                   ))}
                 </ul>
