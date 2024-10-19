@@ -50,20 +50,20 @@ const LengthConverter: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Length Converter</h1>
+    <div className="apple-card">
+      <h1 className="text-2xl font-semibold mb-4">Length Converter</h1>
       <div className="mb-4">
         <input
           type="number"
           value={fromValue}
           onChange={(e) => setFromValue(e.target.value)}
-          className="border p-2 mr-2"
+          className="apple-input mr-2"
           placeholder="Enter value"
         />
         <select
           value={fromUnit}
           onChange={(e) => setFromUnit(e.target.value)}
-          className="border p-2"
+          className="apple-select mt-2"
         >
           {units.map((unit) => (
             <option key={unit.value} value={unit.value}>
@@ -73,11 +73,11 @@ const LengthConverter: React.FC = () => {
         </select>
       </div>
       <div className="mb-4">
-        <span className="mr-2">To:</span>
+        <span className="block text-gray-700 mb-2">To:</span>
         <select
           value={toUnit}
           onChange={(e) => setToUnit(e.target.value)}
-          className="border p-2"
+          className="apple-select"
         >
           {units.map((unit) => (
             <option key={unit.value} value={unit.value}>
@@ -87,7 +87,7 @@ const LengthConverter: React.FC = () => {
         </select>
       </div>
       <div className="mb-4">
-        <strong>Result:</strong> {result} {toUnit}
+        <strong className="text-gray-700">Result:</strong> <span className="text-blue-500 font-semibold">{result}</span> {toUnit}
       </div>
     </div>
   );

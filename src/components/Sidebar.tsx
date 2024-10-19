@@ -51,26 +51,26 @@ const Sidebar: React.FC<SidebarProps> = ({ toolCategories, isCollapsed, setIsCol
   };
 
   return (
-    <aside className={`bg-white overflow-y-auto transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
+    <aside className={`bg-gray-100 overflow-y-auto transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
       <div className="p-4 flex justify-between items-center">
-        {!isCollapsed && <h2 className="text-xl font-semibold">Tools</h2>}
+        {!isCollapsed && <h2 className="text-xl font-semibold text-gray-900">Tools</h2>}
         <button
           onClick={toggleSidebar}
           className="p-2 rounded-full hover:bg-gray-200 transition-colors duration-200"
         >
-          {isCollapsed ? <Menu size={24} /> : <X size={24} />}
+          {isCollapsed ? <Menu size={24} className="text-gray-600" /> : <X size={24} className="text-gray-600" />}
         </button>
       </div>
       {!isCollapsed && (
         <div className="p-4">
-          <Link to="/" className="flex items-center mb-4 text-blue-600 hover:text-blue-800">
+          <Link to="/" className="flex items-center mb-4 text-gray-700 hover:text-blue-500 transition duration-300 ease-in-out">
             <Home size={20} className="mr-2" />
             Home
           </Link>
           {toolCategories.map((category) => (
             <div key={category.name} className="mb-2">
               <button
-                className="flex items-center justify-between w-full text-left font-medium"
+                className="flex items-center justify-between w-full text-left font-medium text-gray-700 hover:text-blue-500 transition duration-300 ease-in-out"
                 onClick={() => toggleCategory(category.name)}
               >
                 <Link to={getCategoryPath(category.name)} className="flex-grow">
@@ -88,7 +88,7 @@ const Sidebar: React.FC<SidebarProps> = ({ toolCategories, isCollapsed, setIsCol
                     <li key={tool.id} className="mb-1">
                       <Link
                         to={getToolPath(category.name, tool.name)}
-                        className="text-sm hover:text-blue-600"
+                        className="text-sm text-gray-600 hover:text-blue-500 transition duration-300 ease-in-out"
                       >
                         {tool.name}
                       </Link>
