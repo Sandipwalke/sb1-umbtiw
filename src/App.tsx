@@ -51,6 +51,13 @@ import GrammarChecker from './components/tools/GrammarChecker';
 import ParaphrasingTool from './components/tools/ParaphrasingTool';
 import PlagiarismChecker from './components/tools/PlagiarismChecker';
 import { toolCategories } from './data/toolData';
+import ZipUnzip from './components/tools/ZipUnzip';
+import CompressPdf from './components/tools/CompressPdf';
+import CompressImage from './components/tools/CompressImage';
+import RarUnrar from './components/tools/RarUnrar';
+import SevenZipArchiver from './components/tools/SevenZipArchiver';
+import TarballExtractor from './components/tools/TarballExtractor';
+import SplitLargeFiles from './components/tools/SplitLargeFiles';
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -95,7 +102,14 @@ function App() {
               <Route path="cryptocurrency-converter" element={<CryptocurrencyConverter />} />
             </Route>
             <Route path="/text-tools/*" element={<TextTools />} />
-            <Route path="/file-compression" element={<FileCompression />} />
+            <Route path="/file-compression/decompression" element={<FileCompression />} />
+            <Route path="/file-compression/decompression/zip/unzip-files" element={<ZipUnzip />} />
+            <Route path="/file-compression/decompression/compress-pdf" element={<CompressPdf />} />
+            <Route path="/file-compression/decompression/compress-image-files" element={<CompressImage />} />
+            <Route path="/file-compression/decompression/rar/unrar-files" element={<RarUnrar />} />
+            <Route path="/file-compression/decompression/7-zip-archiver" element={<SevenZipArchiver />} />
+            <Route path="/file-compression/decompression/tarball-extractor" element={<TarballExtractor />} />
+            <Route path="/file-compression/decompression/split-large-files" element={<SplitLargeFiles />} />
             <Route path="/date-time-tools/*" element={<DateTimeTools />} />
             <Route path="/math-tools" element={<MathTools />} />
             <Route path="/qr-barcode-tools" element={<QrBarcodeTool />} />

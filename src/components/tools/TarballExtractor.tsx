@@ -2,10 +2,9 @@ import React from 'react';
 
 const TarballExtractor: React.FC = () => {
   return (
-    <div>
-      <h1>Tarball (tar.gz) Extractor</h1>
-      <p>This tool allows you to extract files from tarball (tar.gz) archives.</p>
-      {/* Add the actual tarball extraction logic and UI here */}
+    <div className="max-w-2xl mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Tarball (tar.gz) Extractor</h1>
+      <p>This feature is not yet implemented. It requires a backend service or a specialized library to handle tarball extraction.</p>
     </div>
   );
 };
