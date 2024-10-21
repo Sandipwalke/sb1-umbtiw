@@ -90,6 +90,7 @@ import BmiCalculator from './components/tools/BmiCalculator';
 import MortgageCalculator from './components/tools/MortgageCalculator';
 import LoanCalculator from './components/tools/LoanCalculator';
 import TaxCalculator from './components/tools/TaxCalculator';
+import AgeCalculator from './components/tools/AgeCalculator';
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -165,23 +166,24 @@ function App() {
             <Route path="/web-torrent" element={<WebTorrent />} />
             <Route path="/3d-tools" element={<Tool3D />} />
             <Route path="/ar-tools" element={<ArTools />} />
-            <Route path="/misc-tools/*" element={<MiscTools />} />
-            <Route path="/misc-tools/url-shortener" element={<UrlShortener />} />
-            <Route path="/misc-tools/password-generator" element={<PasswordGenerator />} />
-            <Route path="/misc-tools/json-formatter" element={<JsonFormatter />} />
-            <Route path="/misc-tools/base64-encoder-decoder" element={<Base64EncoderDecoder />} />
-            <Route path="/misc-tools/email-validator" element={<EmailValidator />} />
-            <Route path="/misc-tools/ip-address-lookup" element={<IpAddressLookup />} />
-            <Route path="/misc-tools/hex-to-rgb-converter" element={<HexToRgbConverter />} />
-            <Route path="/misc-tools/random-number-generator" element={<RandomNumberGenerator />} />
-            <Route path="/misc-tools/color-picker" element={<ColorPicker />} />
-            <Route path="/misc-tools/dns-lookup" element={<DnsLookup />} />
-            <Route path="/misc-tools/domain-name-generator" element={<DomainNameGenerator />} />
-            <Route path="/misc-tools/whois-lookup" element={<WhoisLookup />} />
-            <Route path="/misc-tools/bmi-calculator" element={<BmiCalculator />} />
-            <Route path="/misc-tools/mortgage-calculator" element={<MortgageCalculator />} />
-            <Route path="/misc-tools/loan-calculator" element={<LoanCalculator />} />
-            <Route path="/misc-tools/tax-calculator" element={<TaxCalculator />} />
+            <Route path="/miscellaneous-tools/*" element={<MiscTools />} />
+            <Route path="/miscellaneous-tools/url-shortener" element={<UrlShortener />} />
+            <Route path="/miscellaneous-tools/password-generator" element={<PasswordGenerator />} />
+            <Route path="/miscellaneous-tools/json-formatter" element={<JsonFormatter />} />
+            <Route path="/miscellaneous-tools/base64-encoder-decoder" element={<Base64EncoderDecoder />} />
+            <Route path="/miscellaneous-tools/email-validator" element={<EmailValidator />} />
+            <Route path="/miscellaneous-tools/ip-address-lookup" element={<IpAddressLookup />} />
+            <Route path="/miscellaneous-tools/hex-to-rgb-converter" element={<HexToRgbConverter />} />
+            <Route path="/miscellaneous-tools/random-number-generator" element={<RandomNumberGenerator />} />
+            <Route path="/miscellaneous-tools/color-picker" element={<ColorPicker />} />
+            <Route path="/miscellaneous-tools/dns-lookup" element={<DnsLookup />} />
+            <Route path="/miscellaneous-tools/domain-name-generator" element={<DomainNameGenerator />} />
+            <Route path="/miscellaneous-tools/whois-lookup" element={<WhoisLookup />} />
+            <Route path="/miscellaneous-tools/bmi-calculator" element={<BmiCalculator />} />
+            <Route path="/miscellaneous-tools/mortgage-calculator" element={<MortgageCalculator />} />
+            <Route path="/miscellaneous-tools/loan-calculator" element={<LoanCalculator />} />
+            <Route path="/miscellaneous-tools/tax-calculator" element={<TaxCalculator />} />
+            <Route path="/miscellaneous-tools/age-calculator" element={<AgeCalculator />} />
             <Route path="/text-tools/text-encryption-aes-256" element={<TextEncryption />} />
           </Routes>
         </div>
