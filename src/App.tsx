@@ -99,6 +99,16 @@ import DateFormatter from './components/tools/DateFormatter';
 import Stopwatch from './components/tools/Stopwatch';
 import CountdownTimer from './components/tools/CountdownTimer';
 import DateDifferenceCalculator from './components/tools/DateDifferenceCalculator';
+import ResizeImage from './components/tools/ResizeImage';
+import CropImage from './components/tools/CropImage';
+import ConvertImageFormat from './components/tools/ConvertImageFormat';
+import ApplyFilters from './components/tools/ApplyFilters';
+import RemoveBackground from './components/tools/RemoveBackground';
+import ImageWatermarking from './components/tools/ImageWatermarking';
+import RotateImage from './components/tools/RotateImage';
+import ConvertToGrayscale from './components/tools/ConvertToGrayscale';
+import MemeGenerator from './components/tools/MemeGenerator';
+import ImageToText from './components/tools/ImageToText';
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -136,6 +146,19 @@ function App() {
             <Route path="/document-converters/pdf-splitter" element={<PdfSplitter />} />
             <Route path="/document-converters/text-file-converter" element={<TextFileConverter />} />
             <Route path="/image-photo-editors" element={<ImagePhotoEditors />} />
+            <Route path="/image-photo-editors/resize-image" element={<ResizeImage />} />
+            <Route path="/image-photo-editors" element={<ImagePhotoEditors />} />
+            <Route path="/image-photo-editors/resize-image" element={<ResizeImage />} />
+            <Route path="/image-photo-editors/crop-image" element={<CropImage />} />
+            <Route path="/image-photo-editors/compress-image" element={<CompressImage />} />
+            <Route path="/image-photo-editors/convert-image-format" element={<ConvertImageFormat />} />
+            <Route path="/image-photo-editors/apply-filters" element={<ApplyFilters />} />
+            <Route path="/image-photo-editors/remove-background" element={<RemoveBackground />} />
+            <Route path="/image-photo-editors/image-watermarking" element={<ImageWatermarking />} />
+            <Route path="/image-photo-editors/rotate-image" element={<RotateImage />} />
+            <Route path="/image-photo-editors/convert-to-grayscale" element={<ConvertToGrayscale />} />
+            <Route path="/image-photo-editors/meme-generator" element={<MemeGenerator />} />
+            <Route path="/image-photo-editors/image-to-text" element={<ImageToText />} />
             <Route path="/unit-converters/*" element={<UnitConverters />} />
             <Route path="/currency-converter" element={<CurrencyConverter />}>
               <Route path="real-time-currency-converter" element={<RealTimeCurrencyConverter />} />
