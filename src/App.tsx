@@ -172,13 +172,13 @@ function App() {
             <Route path="/math-tools/quadratic-equation-solver" element={<QuadraticEquationSolver />} />
             <Route path="/math-tools/unit-circle-calculator" element={<UnitCircleCalculator />} />
             <Route path="/math-tools/probability-calculator" element={<ProbabilityCalculator />} />
-            <Route path="/qr-barcode-tools/*" element={<QrBarcodeTool />}>
+            <Route path="/qr-code-barcode-tools/*" element={<QrBarcodeTool />}>
               <Route index element={<div>Please select a tool from the list above.</div>} />
-              <Route path="qr-code-generator" element={<QRCodeGenerator />} />
-              <Route path="barcode-generator" element={<BarcodeGenerator />} />
-              <Route path="qr-code-decoder" element={<QRCodeDecoder />} />
-              <Route path="barcode-scanner" element={<BarcodeScanner />} />
             </Route>
+            <Route path="/qr-code-barcode-tools/qr-code-generator" element={<QRCodeGenerator />} />
+            <Route path="/qr-code-barcode-tools/barcode-generator" element={<BarcodeGenerator />} />
+            <Route path="/qr-code-barcode-tools/qr-code-decoder" element={<QRCodeDecoder />} />
+            <Route path="/qr-code-barcode-tools/barcode-scanner" element={<BarcodeScanner />} />
             <Route path="/video-players" element={<VideoPlayer />} />
             <Route path="/audio-players" element={<AudioPlayer />} />
             <Route path="/web-torrent" element={<WebTorrent />} />
