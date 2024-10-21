@@ -151,14 +151,14 @@ function App() {
             <Route path="/image-photo-editors/resize-image" element={<ResizeImage />} />
             <Route path="/image-photo-editors/crop-image" element={<CropImage />} />
             <Route path="/image-photo-editors/compress-image" element={<CompressImage />} />
-            <Route path="/image-photo-editors/convert-image-format" element={<ConvertImageFormat />} />
-            <Route path="/image-photo-editors/apply-filters" element={<ApplyFilters />} />
-            <Route path="/image-photo-editors/remove-background" element={<RemoveBackground />} />
+            <Route path="/image-photo-editors/convert-image-format-jpg-to-png,-png-to-gif" element={<ConvertImageFormat />} />
+            <Route path="/image-photo-editors/apply-filters-brightness,-contrast" element={<ApplyFilters />} />
+            <Route path="/image-photo-editors/remove-background-auto-cut-out" element={<RemoveBackground />} />
             <Route path="/image-photo-editors/image-watermarking" element={<ImageWatermarking />} />
             <Route path="/image-photo-editors/rotate-image" element={<RotateImage />} />
-            <Route path="/image-photo-editors/convert-to-grayscale" element={<ConvertToGrayscale />} />
+            <Route path="/image-photo-editors/convert-image-to-grayscale" element={<ConvertToGrayscale />} />
             <Route path="/image-photo-editors/meme-generator" element={<MemeGenerator />} />
-            <Route path="/image-photo-editors/image-to-text" element={<ImageToText />} />
+            <Route path="/image-photo-editors/image-to-text-ocr" element={<ImageToText />} />
             <Route path="/unit-converters/*" element={<UnitConverters />} />
             <Route path="/currency-converter" element={<CurrencyConverter />}>
               <Route path="real-time-currency-converter" element={<RealTimeCurrencyConverter />} />
