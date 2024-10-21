@@ -40,15 +40,6 @@ const DateTimeTools: React.FC = () => {
         </div>
         <div className="md:col-span-3">
           <Routes>
-            <Route path="time-zone-converter" element={<TimeZoneConverter />} />
-            <Route path="age-calculator" element={<AgeCalculator />} />
-            <Route path="date-difference-calculator" element={<DateDifferenceCalculator />} />
-            <Route path="countdown-timer" element={<CountdownTimer />} />
-            <Route path="stopwatch" element={<Stopwatch />} />
-            <Route path="world-clock" element={<WorldClock />} />
-            <Route path="date-formatter" element={<DateFormatter />} />
-            <Route path="unix-timestamp-converter" element={<UnixTimestampConverter />} />
-            <Route path="moon-phase-calculator" element={<MoonPhaseCalculator />} />
             <Route
               index
               element={<div className="text-center text-gray-500 mt-8">Select a tool from the list to get started</div>}

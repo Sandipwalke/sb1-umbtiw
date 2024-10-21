@@ -91,6 +91,14 @@ import MortgageCalculator from './components/tools/MortgageCalculator';
 import LoanCalculator from './components/tools/LoanCalculator';
 import TaxCalculator from './components/tools/TaxCalculator';
 import AgeCalculator from './components/tools/AgeCalculator';
+import TimeZoneConverter from './components/tools/TimeZoneConverter';
+import MoonPhaseCalculator from './components/tools/MoonPhaseCalculator';
+import UnixTimestampConverter from './components/tools/UnixTimestampConverter';
+import WorldClock from './components/tools/WorldClock';
+import DateFormatter from './components/tools/DateFormatter';
+import Stopwatch from './components/tools/Stopwatch';
+import CountdownTimer from './components/tools/CountdownTimer';
+import DateDifferenceCalculator from './components/tools/DateDifferenceCalculator';
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -144,6 +152,16 @@ function App() {
             <Route path="/file-compression/decompression/tarball-extractor" element={<TarballExtractor />} />
             <Route path="/file-compression/decompression/split-large-files" element={<SplitLargeFiles />} />
             <Route path="/date-time-tools/*" element={<DateTimeTools />} />
+            <Route path="/date-time-tools/time-zone-converter" element={<TimeZoneConverter />} />
+            <Route path="/date-time-tools/age-calculator" element={<AgeCalculator />} />
+            <Route path="/date-time-tools/date-difference-calculator" element={<DateDifferenceCalculator />} />
+            <Route path="/date-time-tools/countdown-timer" element={<CountdownTimer />} />
+            <Route path="/date-time-tools/stopwatch" element={<Stopwatch />} />
+            <Route path="/date-time-tools/world-clock" element={<WorldClock />} />
+            <Route path="/date-time-tools/date-formatter" element={<DateFormatter />} />
+            <Route path="/date-time-tools/unix-timestamp-converter" element={<UnixTimestampConverter />} />
+            <Route path="/date-time-tools/moon-phase-calculator" element={<MoonPhaseCalculator />} />
+
             <Route path="/math-tools/*" element={<MathTools />} />
             <Route path="/math-tools/simple-calculator" element={<SimpleCalculator />} />
             <Route path="/math-tools/percentage-calculator" element={<PercentageCalculator />} />
