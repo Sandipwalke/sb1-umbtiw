@@ -51,8 +51,8 @@ const Sidebar: React.FC<SidebarProps> = ({ toolCategories, isCollapsed, setIsCol
   };
 
   return (
-    <aside className={`bg-gray-100 overflow-y-auto transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
-      <div className="p-4 flex justify-between items-center">
+    <aside className={`bg-gray-100 flex flex-col h-screen transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
+      <div className="p-4 flex justify-between items-center flex-shrink-0">
         {!isCollapsed && <h2 className="text-xl font-semibold text-gray-900">Tools</h2>}
         <button
           onClick={toggleSidebar}
@@ -62,42 +62,44 @@ const Sidebar: React.FC<SidebarProps> = ({ toolCategories, isCollapsed, setIsCol
         </button>
       </div>
       {!isCollapsed && (
-        <div className="p-4">
-          <Link to="/" className="flex items-center mb-4 text-gray-700 hover:text-blue-500 transition duration-300 ease-in-out">
-            <Home size={20} className="mr-2" />
-            Home
-          </Link>
-          {toolCategories.map((category) => (
-            <div key={category.name} className="mb-2">
-              <button
-                className="flex items-center justify-between w-full text-left font-medium text-gray-700 hover:text-blue-500 transition duration-300 ease-in-out"
-                onClick={() => toggleCategory(category.name)}
-              >
-                <Link to={getCategoryPath(category.name)} className="flex-grow">
-                  {category.name}
-                </Link>
-                {expandedCategories.includes(category.name) ? (
-                  <ChevronDown size={16} />
-                ) : (
-                  <ChevronRight size={16} />
+        <div className="flex-grow overflow-y-auto">
+          <div className="p-4">
+            <Link to="/" className="flex items-center mb-4 text-gray-700 hover:text-blue-500 transition duration-300 ease-in-out">
+              <Home size={20} className="mr-2" />
+              Home
+            </Link>
+            {toolCategories.map((category) => (
+              <div key={category.name} className="mb-2">
+                <button
+                  className="flex items-center justify-between w-full text-left font-medium text-gray-700 hover:text-blue-500 transition duration-300 ease-in-out"
+                  onClick={() => toggleCategory(category.name)}
+                >
+                  <Link to={getCategoryPath(category.name)} className="flex-grow">
+                    {category.name}
+                  </Link>
+                  {expandedCategories.includes(category.name) ? (
+                    <ChevronDown size={16} />
+                  ) : (
+                    <ChevronRight size={16} />
+                  )}
+                </button>
+                {expandedCategories.includes(category.name) && (
+                  <ul className="ml-4 mt-2">
+                    {category.tools.map((tool) => (
+                      <li key={tool.id} className="mb-1">
+                        <Link
+                          to={getToolPath(category.name, tool.name)}
+                          className="text-sm text-gray-600 hover:text-blue-500 transition duration-300 ease-in-out"
+                        >
+                          {tool.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 )}
-              </button>
-              {expandedCategories.includes(category.name) && (
-                <ul className="ml-4 mt-2">
-                  {category.tools.map((tool) => (
-                    <li key={tool.id} className="mb-1">
-                      <Link
-                        to={getToolPath(category.name, tool.name)}
-                        className="text-sm text-gray-600 hover:text-blue-500 transition duration-300 ease-in-out"
-                      >
-                        {tool.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </aside>
