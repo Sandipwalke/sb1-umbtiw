@@ -5,15 +5,24 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['7z-wasm']
+    exclude: ['7z-wasm'],
+    include: ['pdfjs-dist']
   },
   build: {
     target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          pdfjs: ['pdfjs-dist'],
+        },
+      },
+    },
   },
   server: {
     fs: {
       allow: ['..']
     }
   },
-  assetsInclude: ['**/*.wasm']
+  assetsInclude: ['**/*.wasm'],
+  publicDir: 'public',
 });

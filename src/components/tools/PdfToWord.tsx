@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
 import { saveAs } from 'file-saver';
-import * as pdfjsLib from 'pdfjs-dist/build/pdf';
-
-// Set the worker source
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+import * as pdfjsLib from 'pdfjs-dist';
 
 const PdfToWord: React.FC = () => {
+  useEffect(() => {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.js';
+  }, []);
+
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [isConverting, setIsConverting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -23,20 +24,28 @@ const PdfToWord: React.FC = () => {
   };
 
   const extractTextFromPDF = async (file: File): Promise<string> => {
-    const arrayBuffer = await file.arrayBuffer();
-    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-    let textContent = '';
+    try {
+      const arrayBuffer = await file.arrayBuffer();
+      const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+      const pdf = await loadingTask.promise;
+      let textContent = '';
 
-    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-      const page = await pdf.getPage(pageNum);
-      const text = await page.getTextContent();
-      text.items.forEach((item: any) => {
-        textContent += item.str + ' ';
-      });
-      setProgress((pageNum / pdf.numPages) * 50);
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        const page = await pdf.getPage(pageNum);
+        const text = await page.getTextContent();
+        text.items.forEach((item: any) => {
+          if (item.str) {
+            textContent += item.str + ' ';
+          }
+        });
+        setProgress((pageNum / pdf.numPages) * 50);
+      }
+
+      return textContent;
+    } catch (error) {
+      console.error('Error in extractTextFromPDF:', error);
+      throw error;
     }
-
-    return textContent;
   };
 
   const createWordDoc = async (text: string): Promise<Blob> => {
