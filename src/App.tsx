@@ -128,7 +128,12 @@ function App() {
             setIsCollapsed={setIsSidebarCollapsed}
           />
           <Routes>
-            <Route path="/" element={<ToolContent isSidebarCollapsed={isSidebarCollapsed} />} />
+            <Route path="/" element={
+              <ToolContent 
+                isSidebarCollapsed={isSidebarCollapsed} 
+                toolCategories={toolCategories} 
+              />
+            } />
             <Route path="/document-converters" element={<DocumentConverters />} />
             <Route path="/document-converters/pdf-to-word" element={<PdfToWord />} />
             <Route path="/document-converters/word-to-pdf" element={<WordToPdf />} />
