@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "copy-wasm": "node scripts/copy-wasm.js",
+    "dev": "npm run copy-wasm && vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -12,6 +13,7 @@
     "@types/crypto-js": "^4.2.2",
     "@types/papaparse": "^5.3.14",
     "@types/react-router-dom": "^5.3.3",
+    "7z-wasm": "^1.1.0",
     "axios": "^1.7.7",
     "browser-image-compression": "^2.0.2",
     "crypto-js": "^4.2.0",

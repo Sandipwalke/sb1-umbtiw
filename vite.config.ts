@@ -5,11 +5,15 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['node-summarizer']
+    exclude: ['7z-wasm']
   },
   build: {
-    commonjsOptions: {
-      exclude: ['node-summarizer']
+    target: 'esnext',
+  },
+  server: {
+    fs: {
+      allow: ['..']
     }
-  }
+  },
+  assetsInclude: ['**/*.wasm']
 });
