@@ -59,6 +59,57 @@ import SevenZipArchiver from './components/tools/SevenZipArchiver';
 import TarballExtractor from './components/tools/TarballExtractor';
 import SplitLargeFiles from './components/tools/SplitLargeFiles';
 
+import SimpleCalculator from './components/tools/SimpleCalculator';
+import PercentageCalculator from './components/tools/PercentageCalculator';
+import FractionToDecimalConverter from './components/tools/FractionToDecimalConverter';
+import ScientificCalculator from './components/tools/ScientificCalculator';
+import AlgebraSolver from './components/tools/AlgebraSolver';
+import MatrixCalculator from './components/tools/MatrixCalculator';
+import QuadraticEquationSolver from './components/tools/QuadraticEquationSolver';
+import UnitCircleCalculator from './components/tools/UnitCircleCalculator';
+import ProbabilityCalculator from './components/tools/ProbabilityCalculator';
+
+import QRCodeGenerator from './components/tools/QRCodeGenerator';
+import BarcodeGenerator from './components/tools/BarcodeGenerator';
+import QRCodeDecoder from './components/tools/QRCodeDecoder';
+import BarcodeScanner from './components/tools/BarcodeScanner';
+
+import UrlShortener from './components/tools/UrlShortener';
+import PasswordGenerator from './components/tools/PasswordGenerator';
+import JsonFormatter from './components/tools/JsonFormatter';
+import Base64EncoderDecoder from './components/tools/Base64EncoderDecoder';
+import EmailValidator from './components/tools/EmailValidator';
+import IpAddressLookup from './components/tools/IpAddressLookup';
+import HexToRgbConverter from './components/tools/HexToRgbConverter';
+import RandomNumberGenerator from './components/tools/RandomNumberGenerator';
+import ColorPicker from './components/tools/ColorPicker';
+import DnsLookup from './components/tools/DnsLookup';
+import DomainNameGenerator from './components/tools/DomainNameGenerator';
+import WhoisLookup from './components/tools/WhoisLookup';
+import BmiCalculator from './components/tools/BmiCalculator';
+import MortgageCalculator from './components/tools/MortgageCalculator';
+import LoanCalculator from './components/tools/LoanCalculator';
+import TaxCalculator from './components/tools/TaxCalculator';
+import AgeCalculator from './components/tools/AgeCalculator';
+import TimeZoneConverter from './components/tools/TimeZoneConverter';
+import MoonPhaseCalculator from './components/tools/MoonPhaseCalculator';
+import UnixTimestampConverter from './components/tools/UnixTimestampConverter';
+import WorldClock from './components/tools/WorldClock';
+import DateFormatter from './components/tools/DateFormatter';
+import Stopwatch from './components/tools/Stopwatch';
+import CountdownTimer from './components/tools/CountdownTimer';
+import DateDifferenceCalculator from './components/tools/DateDifferenceCalculator';
+import ResizeImage from './components/tools/ResizeImage';
+import CropImage from './components/tools/CropImage';
+import ConvertImageFormat from './components/tools/ConvertImageFormat';
+import ApplyFilters from './components/tools/ApplyFilters';
+import RemoveBackground from './components/tools/RemoveBackground';
+import ImageWatermarking from './components/tools/ImageWatermarking';
+import RotateImage from './components/tools/RotateImage';
+import ConvertToGrayscale from './components/tools/ConvertToGrayscale';
+import MemeGenerator from './components/tools/MemeGenerator';
+import ImageToText from './components/tools/ImageToText';
+
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
@@ -95,6 +146,19 @@ function App() {
             <Route path="/document-converters/pdf-splitter" element={<PdfSplitter />} />
             <Route path="/document-converters/text-file-converter" element={<TextFileConverter />} />
             <Route path="/image-photo-editors" element={<ImagePhotoEditors />} />
+            <Route path="/image-photo-editors/resize-image" element={<ResizeImage />} />
+            <Route path="/image-photo-editors" element={<ImagePhotoEditors />} />
+            <Route path="/image-photo-editors/resize-image" element={<ResizeImage />} />
+            <Route path="/image-photo-editors/crop-image" element={<CropImage />} />
+            <Route path="/image-photo-editors/compress-image" element={<CompressImage />} />
+            <Route path="/image-photo-editors/convert-image-format-jpg-to-png,-png-to-gif" element={<ConvertImageFormat />} />
+            <Route path="/image-photo-editors/apply-filters-brightness,-contrast" element={<ApplyFilters />} />
+            <Route path="/image-photo-editors/remove-background-auto-cut-out" element={<RemoveBackground />} />
+            <Route path="/image-photo-editors/image-watermarking" element={<ImageWatermarking />} />
+            <Route path="/image-photo-editors/rotate-image" element={<RotateImage />} />
+            <Route path="/image-photo-editors/convert-image-to-grayscale" element={<ConvertToGrayscale />} />
+            <Route path="/image-photo-editors/meme-generator" element={<MemeGenerator />} />
+            <Route path="/image-photo-editors/image-to-text-ocr" element={<ImageToText />} />
             <Route path="/unit-converters/*" element={<UnitConverters />} />
             <Route path="/currency-converter" element={<CurrencyConverter />}>
               <Route path="real-time-currency-converter" element={<RealTimeCurrencyConverter />} />
@@ -111,14 +175,56 @@ function App() {
             <Route path="/file-compression/decompression/tarball-extractor" element={<TarballExtractor />} />
             <Route path="/file-compression/decompression/split-large-files" element={<SplitLargeFiles />} />
             <Route path="/date-time-tools/*" element={<DateTimeTools />} />
-            <Route path="/math-tools" element={<MathTools />} />
-            <Route path="/qr-barcode-tools" element={<QrBarcodeTool />} />
+            <Route path="/date-time-tools/time-zone-converter" element={<TimeZoneConverter />} />
+            <Route path="/date-time-tools/age-calculator" element={<AgeCalculator />} />
+            <Route path="/date-time-tools/date-difference-calculator" element={<DateDifferenceCalculator />} />
+            <Route path="/date-time-tools/countdown-timer" element={<CountdownTimer />} />
+            <Route path="/date-time-tools/stopwatch" element={<Stopwatch />} />
+            <Route path="/date-time-tools/world-clock" element={<WorldClock />} />
+            <Route path="/date-time-tools/date-formatter" element={<DateFormatter />} />
+            <Route path="/date-time-tools/unix-timestamp-converter" element={<UnixTimestampConverter />} />
+            <Route path="/date-time-tools/moon-phase-calculator" element={<MoonPhaseCalculator />} />
+
+            <Route path="/math-tools/*" element={<MathTools />} />
+            <Route path="/math-tools/simple-calculator" element={<SimpleCalculator />} />
+            <Route path="/math-tools/percentage-calculator" element={<PercentageCalculator />} />
+            <Route path="/math-tools/fraction-to-decimal-converter" element={<FractionToDecimalConverter />} />
+            <Route path="/math-tools/scientific-calculator" element={<ScientificCalculator />} />
+            <Route path="/math-tools/algebra-solver" element={<AlgebraSolver />} />
+            <Route path="/math-tools/matrix-calculator" element={<MatrixCalculator />} />
+            <Route path="/math-tools/quadratic-equation-solver" element={<QuadraticEquationSolver />} />
+            <Route path="/math-tools/unit-circle-calculator" element={<UnitCircleCalculator />} />
+            <Route path="/math-tools/probability-calculator" element={<ProbabilityCalculator />} />
+            <Route path="/qr-code-barcode-tools/*" element={<QrBarcodeTool />}>
+              <Route index element={<div>Please select a tool from the list above.</div>} />
+            </Route>
+            <Route path="/qr-code-barcode-tools/qr-code-generator" element={<QRCodeGenerator />} />
+            <Route path="/qr-code-barcode-tools/barcode-generator" element={<BarcodeGenerator />} />
+            <Route path="/qr-code-barcode-tools/qr-code-decoder" element={<QRCodeDecoder />} />
+            <Route path="/qr-code-barcode-tools/barcode-scanner" element={<BarcodeScanner />} />
             <Route path="/video-players" element={<VideoPlayer />} />
             <Route path="/audio-players" element={<AudioPlayer />} />
             <Route path="/web-torrent" element={<WebTorrent />} />
             <Route path="/3d-tools" element={<Tool3D />} />
             <Route path="/ar-tools" element={<ArTools />} />
-            <Route path="/misc-tools" element={<MiscTools />} />
+            <Route path="/miscellaneous-tools/*" element={<MiscTools />} />
+            <Route path="/miscellaneous-tools/url-shortener" element={<UrlShortener />} />
+            <Route path="/miscellaneous-tools/password-generator" element={<PasswordGenerator />} />
+            <Route path="/miscellaneous-tools/json-formatter" element={<JsonFormatter />} />
+            <Route path="/miscellaneous-tools/base64-encoder-decoder" element={<Base64EncoderDecoder />} />
+            <Route path="/miscellaneous-tools/email-validator" element={<EmailValidator />} />
+            <Route path="/miscellaneous-tools/ip-address-lookup" element={<IpAddressLookup />} />
+            <Route path="/miscellaneous-tools/hex-to-rgb-converter" element={<HexToRgbConverter />} />
+            <Route path="/miscellaneous-tools/random-number-generator" element={<RandomNumberGenerator />} />
+            <Route path="/miscellaneous-tools/color-picker" element={<ColorPicker />} />
+            <Route path="/miscellaneous-tools/dns-lookup" element={<DnsLookup />} />
+            <Route path="/miscellaneous-tools/domain-name-generator" element={<DomainNameGenerator />} />
+            <Route path="/miscellaneous-tools/whois-lookup" element={<WhoisLookup />} />
+            <Route path="/miscellaneous-tools/bmi-calculator" element={<BmiCalculator />} />
+            <Route path="/miscellaneous-tools/mortgage-calculator" element={<MortgageCalculator />} />
+            <Route path="/miscellaneous-tools/loan-calculator" element={<LoanCalculator />} />
+            <Route path="/miscellaneous-tools/tax-calculator" element={<TaxCalculator />} />
+            <Route path="/miscellaneous-tools/age-calculator" element={<AgeCalculator />} />
             <Route path="/text-tools/text-encryption-aes-256" element={<TextEncryption />} />
           </Routes>
         </div>

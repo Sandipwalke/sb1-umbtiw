@@ -1,13 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import QrScanner from 'qr-scanner';
 
-const QrCodeDecoder: React.FC = () => {
+const QRCodeDecoder: React.FC = () => {
+  const [result, setResult] = useState('');
+
+  useEffect(() => {
+    console.log('QRCodeDecoder component mounted');
+  }, []);
+
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      try {
+        const result = await QrScanner.scanImage(file);
+        setResult(result);
+      } catch (error) {
+        console.error('QR code scanning failed:', error);
+        setResult('Failed to scan QR code');
+      }
+    }
+  };
+
   return (
-    <div>
-      <h1>QR Code Decoder</h1>
-      <p>This tool allows you to decode QR codes from uploaded images.</p>
-      {/* Add the actual QR code decoding logic and UI here */}
+    <div className="p-4">
+      <h2 className="text-2xl font-bold mb-4">QR Code Decoder</h2>
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleFileUpload}
+        className="mb-4"
+      />
+      {result && (
+        <div className="mt-4">
+          <h3 className="text-xl font-semibold">Result:</h3>
+          <p className="mt-2">{result}</p>
+        </div>
+      )}
     </div>
   );
 };
 
-export default QrCodeDecoder;
+export default QRCodeDecoder;
