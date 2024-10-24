@@ -139,7 +139,7 @@ function App() {
             <Route path="/document-converters/word-to-pdf" element={<WordToPdf />} />
             <Route path="/document-converters/pdf-to-excel" element={<PdfToExcel />} />
             <Route path="/document-converters/excel-to-pdf-converter" element={<ExcelToPdf />} />
-            <Route path="/document-converters/pdf-to-jpg-png" element={<PdfToImage />} />
+            <Route path="/document-converters/pdf-to-jpg/png" element={<PdfToImage />} />
             <Route path="/document-converters/jpg-png-to-pdf" element={<ImageToPdf />} />
             <Route path="/document-converters/file-format-converters" element={<FileFormatConverters />} />
             <Route path="/document-converters/epub-to-pdf" element={<EpubToPdf />} />

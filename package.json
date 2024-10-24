@@ -39,7 +39,7 @@
     "papaparse": "^5.4.1",
     "pdf-lib": "^1.17.1",
     "pdf-parse": "^1.1.1",
-    "pdfjs-dist": "2.9.359",
+    "pdfjs-dist": "^2.16.105",
     "pdfmake": "^0.2.14",
     "qr-scanner": "^1.4.2",
     "qrcode.react": "^4.0.1",

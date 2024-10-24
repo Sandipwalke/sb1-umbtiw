@@ -99,7 +99,11 @@ const ExcelToPdf: React.FC = () => {
           </div>
         )}
       </div>
-      <button onClick={handleConvert} disabled={!file}>
+      <button
+        onClick={handleConvert}
+        disabled={!file}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50"
+      >
         Convert to PDF
       </button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
