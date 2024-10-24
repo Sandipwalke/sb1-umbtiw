@@ -109,6 +109,12 @@ import RotateImage from './components/tools/RotateImage';
 import ConvertToGrayscale from './components/tools/ConvertToGrayscale';
 import MemeGenerator from './components/tools/MemeGenerator';
 import ImageToText from './components/tools/ImageToText';
+import MultiCodecVideoPlayer from './components/tools/MultiCodecVideoPlayer';
+import VideoStreamingPlayer from './components/tools/VideoStreamingPlayer';
+import VideoSplitter from './components/tools/VideoSplitter';
+import VideoJoiner from './components/tools/VideoJoiner';
+import VideoFileConverter from './components/tools/VideoFileConverter';
+import YoutubeVideoDownloader from './components/tools/YoutubeVideoDownloader';
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -231,6 +237,12 @@ function App() {
             <Route path="/miscellaneous-tools/tax-calculator" element={<TaxCalculator />} />
             <Route path="/miscellaneous-tools/age-calculator" element={<AgeCalculator />} />
             <Route path="/text-tools/text-encryption-aes-256" element={<TextEncryption />} />
+            <Route path="/video-players/tools/multi-codec-video-player" element={<MultiCodecVideoPlayer />} />
+            <Route path="/video-players/tools/video-streaming-player" element={<VideoStreamingPlayer />} />
+            <Route path="/video-players/tools/video-splitter" element={<VideoSplitter />} />
+            <Route path="/video-players/tools/video-joiner" element={<VideoJoiner />} />
+            <Route path="/video-players/tools/video-file-converter" element={<VideoFileConverter />} />
+            <Route path="/video-players/tools/youtube-video-downloader" element={<YoutubeVideoDownloader />} />
           </Routes>
         </div>
       </div>

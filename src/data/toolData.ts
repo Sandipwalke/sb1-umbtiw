@@ -151,21 +151,22 @@ export const toolCategories = [
     ]
   },
   {
-    name: "Web-based Video Players",
+    name: "Video Players/Tools",
     tools: [
       { id: 113, name: "Multi-codec Video Player" },
       { id: 114, name: "Video Streaming Player" },
-      { id: 115, name: "Subtitle Support for Videos" },
-      { id: 116, name: "Video Playback Speed Controller" },
-      { id: 117, name: "Picture-in-Picture (PIP) Mode" },
+      { id: 115, name: "Video Splitter" },
+      { id: 116, name: "Video Joiner" },
+      { id: 117, name: "Video file Converter" },
+      { id: 135, name: "Youtube Video Downloader" },
     ]
   },
   {
-    name: "Web-based Audio Players",
+    name: "Audio Players/Tools",
     tools: [
       { id: 119, name: "Multi-codec Audio Player" },
       { id: 120, name: "Playlist Support for Audio" },
-      { id: 121, name: "Audio Playback Speed Controller" },
+      { id: 121, name: "Audio file Converter" },
       { id: 122, name: "Audio Visualizer" },
       { id: 123, name: "Audio Equalizer" },
     ]
