@@ -26,6 +26,7 @@
     "html2pdf.js": "^0.10.2",
     "jsbarcode": "^3.11.6",
     "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
     "jszip": "^3.10.1",
     "libarchive.js": "^2.0.2",
     "lorem-ipsum": "^2.0.8",
@@ -49,12 +50,14 @@
     "react-image-crop": "^11.0.7",
     "react-router-dom": "^6.27.0",
     "tesseract.js": "^5.1.1",
-    "turndown": "^7.2.0"
+    "turndown": "^7.2.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.7",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@types/xlsx": "^0.0.36",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
