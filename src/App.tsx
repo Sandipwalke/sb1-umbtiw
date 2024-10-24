@@ -148,7 +148,7 @@ function App() {
             <Route path="/document-converters/markdown-to-pdf" element={<MarkdownToPdf />} />
             <Route path="/document-converters/text-to-pdf" element={<TextToPdf />} />
             <Route path="/document-converters/pdf-merger-combine-pdfs" element={<PdfMerger />} />
-            <Route path="/document-converters/pdf-splitter" element={<PdfSplitter />} />
+            <Route path="/document-converters/pdf-splitter-separate-pdf-pages" element={<PdfSplitter />} />
             <Route path="/document-converters/text-file-converter" element={<TextFileConverter />} />
             <Route path="/image-photo-editors" element={<ImagePhotoEditors />} />
             <Route path="/image-photo-editors/resize-image" element={<ResizeImage />} />
