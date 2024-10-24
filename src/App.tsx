@@ -141,13 +141,13 @@ function App() {
             <Route path="/document-converters/excel-to-pdf-converter" element={<ExcelToPdf />} />
             <Route path="/document-converters/pdf-to-jpg/png" element={<PdfToImage />} />
             <Route path="/document-converters/jpg/png-to-pdf" element={<ImageToPdf />} />
-            <Route path="/document-converters/file-format-converters" element={<FileFormatConverters />} />
+            <Route path="/document-converters/file-format-converters-.docx,-.ppt,-.txt" element={<FileFormatConverters />} />
             <Route path="/document-converters/epub-to-pdf" element={<EpubToPdf />} />
             <Route path="/document-converters/odt-to-pdf" element={<OdtToPdf />} />
             <Route path="/document-converters/markdown-to-html" element={<MarkdownToHtml />} />
             <Route path="/document-converters/markdown-to-pdf" element={<MarkdownToPdf />} />
             <Route path="/document-converters/text-to-pdf" element={<TextToPdf />} />
-            <Route path="/document-converters/pdf-merger" element={<PdfMerger />} />
+            <Route path="/document-converters/pdf-merger-combine-pdfs" element={<PdfMerger />} />
             <Route path="/document-converters/pdf-splitter" element={<PdfSplitter />} />
             <Route path="/document-converters/text-file-converter" element={<TextFileConverter />} />
             <Route path="/image-photo-editors" element={<ImagePhotoEditors />} />
